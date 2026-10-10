@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin panel — Foodly</title>
+<meta name="description" content="Foodly — order your favourite food online.">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="admin">
+<div id="site-header"></div>
+
+<main>
+  <div class="container admin">
+    <aside class="admin-side" aria-label="Admin menu">
+      <h3>Admin panel</h3>
+      <a href="#dashboard" data-tab="dashboard">📊 Dashboard</a>
+      <a href="#users" data-tab="users">👥 Users</a>
+      <a href="#dishes" data-tab="dishes">🍔 Dishes</a>
+      <a href="#orders" data-tab="orders">🧾 Orders</a>
+      <a href="#settings" data-tab="settings">⚙️ Settings</a>
+      <button type="button" id="admin-logout">🚪 Logout</button>
+    </aside>
+    <div class="admin-main">
+      <section id="tab-dashboard">
+        <h1>Dashboard</h1>
+        <div class="stats" id="stats"></div>
+        <div class="grid grid-2">
+          <div class="panel"><h3>Orders by status</h3><div id="status-bars"></div></div>
+          <div class="panel"><h3>Top dishes</h3><div id="top-dishes"></div></div>
+        </div>
+        <h3 style="margin-top:28px">Latest orders</h3>
+        <div class="table-wrap"><table class="table responsive" id="latest-orders"></table></div>
+      </section>
+
+      <section id="tab-users">
+        <h1>Users</h1>
+        <div class="table-tools"><input type="search" id="user-search" placeholder="Search by name or email" aria-label="Search users"></div>
+        <div class="table-wrap"><table class="table responsive" id="users-table"></table></div>
+      </section>
+
+      <section id="tab-dishes">
+        <h1>Dishes</h1>
+        <div class="table-tools">
+          <input type="search" id="dish-search" placeholder="Search dishes" aria-label="Search dishes">
+          <span class="spacer"></span>
+          <button class="btn btn-primary" type="button" id="add-dish">+ Add dish</button>
+        </div>
+        <div class="table-wrap"><table class="table responsive" id="dishes-table"></table></div>
+      </section>
+
+      <section id="tab-orders">
+        <h1>Orders</h1>
+        <div class="table-tools">
+          <input type="search" id="order-search" placeholder="Search by ID or customer" aria-label="Search orders">
+          <select id="order-status" aria-label="Filter by status"></select>
+        </div>
+        <div class="table-wrap"><table class="table responsive" id="orders-table"></table></div>
+      </section>
+
+      <section id="tab-settings">
+        <h1>Settings</h1>
+        <div class="panel" style="max-width:560px">
+          <h3>Store rules</h3>
+          <p class="muted">Delivery fee: <b id="set-fee"></b> · Free delivery from: <b id="set-free"></b> · Promo code: <b>WELCOME10</b> (−10%)</p>
+          <h3 style="margin-top:20px">Demo data</h3>
+          <p class="muted">Restore the original dishes, users and orders. This deletes everything you added.</p>
+          <button class="btn btn-danger" type="button" id="reset-data">Reset demo data</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <dialog class="dialog" id="dish-dialog" aria-labelledby="dish-title">
+    <form id="dish-form" novalidate>
+      <h3 id="dish-title">Add dish</h3>
+      <div class="field"><label for="name">Name</label><input id="name" name="name"><span class="error" role="alert"></span></div>
+      <div class="form-row">
+        <div class="field"><label for="category">Category</label><input id="category" name="category" list="cat-list" placeholder="Burgers, Pizza…"><datalist id="cat-list"></datalist><span class="error" role="alert"></span></div>
+        <div class="field"><label for="price">Price (₸)</label><input id="price" name="price" type="number" min="0" step="10"><span class="error" role="alert"></span></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="rating">Rating (0–5)</label><input id="rating" name="rating" type="number" min="0" max="5" step="0.1" value="4.5"><span class="error" role="alert"></span></div>
+        <div class="field"><label for="time">Cooking time (min)</label><input id="time" name="time" type="number" min="1" step="1" value="20"><span class="error" role="alert"></span></div>
+      </div>
+      <div class="field"><label for="description">Description</label><textarea id="description" name="description"></textarea><span class="error" role="alert"></span></div>
+      <div class="field"><label for="ingredients">Ingredients <span class="muted">(comma separated)</span></label><input id="ingredients" name="ingredients" placeholder="Beef, cheese, bun"><span class="error" role="alert"></span></div>
+      <div class="field"><label for="image">Photo <span class="muted">(optional)</span></label><input id="image" name="image" type="file" accept="image/*"><span class="error" role="alert"></span></div>
+      <div class="dialog-actions">
+        <button class="btn btn-ghost" type="button" id="dish-cancel">Cancel</button>
+        <button class="btn btn-primary" type="submit" id="dish-save">Save dish</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="dialog" id="order-dialog" aria-labelledby="order-title">
+    <div id="order-detail"></div>
+    <div class="dialog-actions"><button class="btn btn-secondary" type="button" id="order-close">Close</button></div>
+  </dialog>
+</main>
+<div id="site-footer"></div>
+<script src="js/storage.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

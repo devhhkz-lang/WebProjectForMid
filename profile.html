@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My profile — Foodly</title>
+<meta name="description" content="Foodly — order your favourite food online.">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="profile">
+<div id="site-header"></div>
+
+<main>
+  <div class="container">
+    <div class="page-head"><h1>My profile</h1></div>
+    <section class="panel" id="profile-card" aria-label="Profile"></section>
+    <section class="section" id="orders" style="padding-bottom:0" aria-labelledby="oh">
+      <div class="section-head"><h2 id="oh">My orders</h2><a class="btn btn-secondary btn-sm" href="menu.html">+ New order</a></div>
+      <div id="orders-list"></div>
+    </section>
+  </div>
+
+  <dialog class="dialog" id="edit-dialog" aria-labelledby="edit-title">
+    <form id="edit-form" novalidate>
+      <h3 id="edit-title">Edit profile</h3>
+      <div class="form-row">
+        <div class="field"><label for="firstName">First name</label><input id="firstName" name="firstName"><span class="error" role="alert"></span></div>
+        <div class="field"><label for="lastName">Last name</label><input id="lastName" name="lastName"><span class="error" role="alert"></span></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" placeholder="+7 777 123 45 67"><span class="error" role="alert"></span></div>
+        <div class="field"><label for="dob">Date of birth</label><input id="dob" name="dob" type="date"><span class="error" role="alert"></span></div>
+      </div>
+      <div class="field"><label for="photo">Profile photo</label><input id="photo" name="photo" type="file" accept="image/*"><span class="error" role="alert"></span></div>
+      <div class="form-row">
+        <div class="field"><label for="password">New password <span class="muted">(optional)</span></label><input id="password" name="password" type="password" autocomplete="new-password"><span class="error" role="alert"></span></div>
+        <div class="field"><label for="confirm">Confirm new password</label><input id="confirm" name="confirm" type="password" autocomplete="new-password"><span class="error" role="alert"></span></div>
+      </div>
+      <div class="dialog-actions">
+        <button class="btn btn-ghost" type="button" id="edit-cancel">Cancel</button>
+        <button class="btn btn-primary" type="submit">Save changes</button>
+      </div>
+    </form>
+  </dialog>
+</main>
+<div id="site-footer"></div>
+<script src="js/storage.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/main.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>

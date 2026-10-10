@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Foodly</title>
+<meta name="description" content="Foodly — order your favourite food online.">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="about">
+<div id="site-header"></div>
+
+<main>
+  <section class="about-hero">
+    <div class="container prose">
+      <h1>About Foodly</h1>
+      <p class="muted" style="font-size:1.1rem">Foodly is a student web-programming project: an online food ordering website with a menu, cart, checkout, user accounts and an admin panel. It works entirely in your browser using localStorage.</p>
+      <a class="btn btn-primary" href="menu.html">Explore the menu</a>
+    </div>
+  </section>
+  <div class="container prose" style="padding-bottom:20px">
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>How long does delivery take?</summary><p>Usually 30–45 minutes, depending on the dish and the distance.</p></details>
+      <details><summary>What does delivery cost?</summary><p>590 ₸ per order. Orders from 8 000 ₸ are delivered for free.</p></details>
+      <details><summary>Is there a promo code?</summary><p>Yes — use <b>WELCOME10</b> in the cart to get 10% off.</p></details>
+      <details><summary>Can I cancel an order?</summary><p>You can cancel an order from your profile while its status is "Pending".</p></details>
+    </div>
+
+    <h2 id="contact">Contact us</h2>
+    <form class="panel" id="contact-form" novalidate>
+      <div class="form-row">
+        <div class="field"><label for="cname">Your name</label><input id="cname" name="cname"><span class="error" role="alert"></span></div>
+        <div class="field"><label for="cemail">Email</label><input id="cemail" name="cemail" type="email"><span class="error" role="alert"></span></div>
+      </div>
+      <div class="field"><label for="cmessage">Message</label><textarea id="cmessage" name="cmessage" placeholder="How can we help?"></textarea><span class="error" role="alert"></span></div>
+      <button class="btn btn-primary" type="submit">Send message</button>
+    </form>
+    <p class="muted" style="margin-top:12px">Or write to <b>hello@foodly.kz</b> · Almaty, Kazakhstan</p>
+
+    <h2 id="privacy">Privacy</h2>
+    <p>We only store the data needed to run your account and orders. In this demo everything stays in your own browser and is never sent to a server.</p>
+    <h2 id="terms">Terms</h2>
+    <p>This website is an educational project. Orders are not real and no payments are processed.</p>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script src="js/storage.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/main.js"></script>
+<script src="js/about.js"></script>
+</body>
+</html>

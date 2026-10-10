@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order food online — Foodly</title>
+<meta name="description" content="Order burgers, pizza, sushi and more online with fast delivery.">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+<div id="site-header"></div>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div id="welcome"></div>
+      <div class="hero-grid">
+        <div>
+          <h1>Your favourite food, <span>delivered fast</span></h1>
+          <p class="lead">Burgers, pizza, sushi and more from the best kitchens in Almaty. Pick a dish, fill the cart, and we bring it to your door in 30 minutes.</p>
+          <form class="hero-search" id="hero-search" role="search">
+            <input type="search" name="q" placeholder="Search for burgers, pizza, sushi…" aria-label="Search dishes">
+            <button class="btn btn-primary" type="submit">Search</button>
+          </form>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="menu.html">Get started</a>
+            <a class="btn btn-secondary btn-lg" href="about.html">How it works</a>
+          </div>
+        </div>
+        <div class="hero-img"><img src="images/hero.svg" alt="Burger, pizza, sushi and salad" width="520" height="420"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cats">
+    <div class="container">
+      <div class="section-head"><h2 id="cats">Browse by category</h2><a href="menu.html">See full menu →</a></div>
+      <div class="categories" id="categories"></div>
+    </div>
+  </section>
+
+  <section class="section section-soft" aria-labelledby="pop">
+    <div class="container">
+      <div class="section-head"><h2 id="pop">Popular right now</h2><a href="menu.html">View all →</a></div>
+      <div class="grid grid-cards" id="popular"></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="feat">
+    <div class="container">
+      <div class="section-head"><h2 id="feat">Why Foodly</h2></div>
+      <div class="grid grid-3">
+        <article class="feature"><div class="icon" aria-hidden="true">⚡</div><h3>Fast delivery</h3><p>Hot food at your door in about 30 minutes, tracked from kitchen to courier.</p></article>
+        <article class="feature"><div class="icon" aria-hidden="true">🥗</div><h3>Fresh &amp; quality</h3><p>Every dish is cooked to order from fresh ingredients by local kitchens.</p></article>
+        <article class="feature"><div class="icon" aria-hidden="true">🎁</div><h3>Great offers</h3><p>Free delivery from 8 000 ₸ and 10% off your first order with code WELCOME10.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft" aria-labelledby="how">
+    <div class="container">
+      <div class="section-head"><h2 id="how">How it works</h2></div>
+      <ol class="steps">
+        <li><b>Choose</b><span>Browse the menu and open any dish for details.</span></li>
+        <li><b>Add to cart</b><span>Set the quantity and add your favourites.</span></li>
+        <li><b>Checkout</b><span>Enter the address, time and payment method.</span></li>
+        <li><b>Enjoy</b><span>Track the status in your profile until it arrives.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-banner">
+        <div><h2>Hungry? Get 10% off your first order</h2><p>Use promo code <b>WELCOME10</b> in your cart.</p></div>
+        <a class="btn btn-lg" href="menu.html">Order now</a>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="js/storage.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

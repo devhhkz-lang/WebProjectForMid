@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login — Foodly</title>
+<meta name="description" content="Foodly — order your favourite food online.">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="login">
+<div id="site-header"></div>
+
+<main class="auth-wrap">
+  <section class="auth-card" aria-labelledby="t">
+    <a class="brand" href="index.html"><img src="images/logo.svg" alt="" width="40" height="40"><span>Foodly</span></a>
+    <h1 id="t">Welcome back</h1>
+    <p class="sub">Log in to continue your order</p>
+    <form id="login-form" novalidate>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="student@email.com"><span class="error" role="alert"></span></div>
+      <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Your password"><span class="error" role="alert"></span></div>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+    </form>
+    <p class="auth-foot"><a href="forgot.html">Forgot password?</a></p>
+    <p class="auth-foot" style="margin-top:8px">Don't have an account? <a href="register.html">Register</a></p>
+    <div class="demo-box">
+      <b>Demo accounts</b><br>
+      User: <button type="button" data-fill="demo@foodly.kz|Demo1234">demo@foodly.kz / Demo1234</button><br>
+      Admin: <button type="button" data-fill="admin@foodly.kz|Admin123">admin@foodly.kz / Admin123</button>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="js/storage.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

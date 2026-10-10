@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — Foodly</title>
+<meta name="description" content="Foodly — order your favourite food online.">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="checkout">
+<div id="site-header"></div>
+
+<main>
+  <div class="container">
+    <div class="page-head"><h1>Checkout</h1><p class="muted">Tell us where and when to deliver</p></div>
+    <div class="layout-2">
+      <form class="panel" id="checkout-form" novalidate>
+        <h2>Delivery details</h2>
+        <div class="form-row">
+          <div class="field"><label for="name">Full name</label><input id="name" name="name" autocomplete="name"><span class="error" role="alert"></span></div>
+          <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+7 777 123 45 67"><span class="error" role="alert"></span></div>
+        </div>
+        <div class="field"><label for="address">Delivery address</label><input id="address" name="address" autocomplete="street-address" placeholder="Street, building, apartment"><span class="error" role="alert"></span></div>
+        <div class="form-row">
+          <div class="field"><label for="date">Date</label><input id="date" name="date" type="date"><span class="error" role="alert"></span></div>
+          <div class="field"><label for="time">Time</label><select id="time" name="time"></select><span class="error" role="alert"></span></div>
+        </div>
+        <div class="field"><label for="comment">Comment for the courier <span class="muted">(optional)</span></label><textarea id="comment" name="comment" maxlength="300" placeholder="Intercom code, floor, allergies…"></textarea><span class="error" role="alert"></span></div>
+        <h2>Payment</h2>
+        <div class="radio-cards field">
+          <label class="radio-card"><input type="radio" name="payment" value="card" checked> 💳 Card</label>
+          <label class="radio-card"><input type="radio" name="payment" value="cash"> 💵 Cash to courier</label>
+        </div>
+        <div class="card-fields" id="card-fields">
+          <div class="field"><label for="cardNumber">Card number</label><input id="cardNumber" name="cardNumber" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456" maxlength="19"><span class="error" role="alert"></span></div>
+          <div class="form-row">
+            <div class="field"><label for="cardExpiry">Expiry</label><input id="cardExpiry" name="cardExpiry" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5"><span class="error" role="alert"></span></div>
+            <div class="field"><label for="cardCvv">CVV</label><input id="cardCvv" name="cardCvv" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="3" type="password"><span class="error" role="alert"></span></div>
+          </div>
+          <p class="muted small">Demo only — card data is validated but never stored.</p>
+        </div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Confirm order</button>
+      </form>
+      <aside class="panel sticky" aria-label="Order summary" id="summary"></aside>
+    </div>
+  </div>
+</main>
+<div id="site-footer"></div>
+<script src="js/storage.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>
